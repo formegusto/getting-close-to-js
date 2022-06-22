@@ -29,7 +29,7 @@ function CarBuilder() {
     this.car = new Car();
   };
   this.step2 = function () {
-    this.car.addParts;
+    this.car.addParts();
   };
   this.get = function () {
     return this.car;
