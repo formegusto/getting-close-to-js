@@ -21,7 +21,7 @@ new 키워드로 자유롭게 원하는 형식의 생성자 함수를 호출하�
 
 Javascript에서는 클래스 기반 상속을 지원하지 않으므로 AbstractFactory, AbstractProduct는 Javascript 예제에서는 이용되지 않는다. AbstractFactory, AbstractProduct는 파생클래스에서 일관된 인터페이스를 제공하도록 하는 역할을 가지고 있는데, Javascript에서는 각 객체가 다른 객체와 동일한 인터페이스 정의 (eq, attributes, method)를 갖도록 하여 일관성을 스스로 보장해야 한다.
 
-1. **Interface Definition**
+- **Interface Definition**
 
 ```jsx
 function Employee(name) {
@@ -40,7 +40,7 @@ function Vendor(name) {
 }
 ```
 
-1. **ConcreteFactory**
+- **ConcreteFactory**
 
 ```jsx
 function EmployeeFactory() {
@@ -55,7 +55,7 @@ function VendorFactory() {
 }
 ```
 
-1. **Products**
+- **Products**
 
 ```jsx
 var persons = [];
