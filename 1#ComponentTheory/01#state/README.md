@@ -124,7 +124,7 @@ setEvent() {
 }
 ```
 
-## Modulization
+## Modularization
 
 ```
 ├── 01#state
