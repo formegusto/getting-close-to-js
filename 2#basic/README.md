@@ -15,7 +15,7 @@
 
 - for문을 사용한 단순연산과, 배열을 만들어 reduce를 사용하여 연산하는 것 중에 어느 것이 빠를까?
 
-```
+```jsx
 // case 1
 console.log(answer1(10000)); // 9.942ms
 console.log(answer2(10000)); // 1.711ms
@@ -26,3 +26,28 @@ console.log(answer2(1000000)); // 122.785ms
 ```
 
 - array를 사용하게 되면, 메모리를 차지하는 배열이 생기기 때문에 어느정도 수용가능한 낮은 크기의 배열에서는 reduce 방식이 빠르게 동작했지만, 큰 크기를 나타낼 수 있는 배열에서는 일반 for문 연산보다 속도가 느린 것으로 나타났다. 합을 이용한 코딩테스트에서는 숫자의 범위가 낮게 설정되어 있다면 reduce를 되도록 사용하는 것도 좋은 방법인 것 같다.
+
+## 05 - 최솟값 구하기
+
+- 내장함수를 사용할 수 있다는 조건이면, 주저없이 Math.min을 쓰겠지만, Number.MAX_SAFE_INTEGER 라는 최대값을 min에 박아두고 하는 방식도 있다.
+- 위에서 스프레드 문법으로 넘기기를 언급했는데, apply(null, arr) 문법으로도 해결할 수 있다. 이는 Function.prototype인 this binding을 위한 call과 apply의 차이때문이다.
+
+```jsx
+Function.prototype.call(context, arg1, arg2, ...);
+Function.prototype.apply(context, [arg1, arg2, ...]);
+```
+
+- call 함수와 보통 함수는 인자를 쉼표로 구분하지만, apply는 배열의 아이템으로 인자를 구분하기 때문에 위 문제를 해결할 수 있다.
+
+## 06 - 홀수
+
+- Math.min.apply(null, arr) 활용 완료!
+- Python을 너무 쓰다보니 np.where 해버렸다,, JS에서는 HOF, filter!!
+
+## 07 - 10부제
+
+- So Easy,,,
+
+## 08 - 일곱 난쟁이
+
+- 9개의 배열에서 7개의 경우에 수의 합이 100을 만족하는 경우를 찾는 과정이다. 이럴 경우에는 9개의 전체 합을 구한 후, 2개의 조합씩 차를 구하여 어떤 수가 제거되었을 때, 배열의 합이 100을 만족하는지 찾으면 된다.
