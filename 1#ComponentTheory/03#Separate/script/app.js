@@ -31,7 +31,7 @@ export default class App extends Component {
   }
 
   mounted() {
-    const { filteredItems, addItem, toggleItem, filterItem } = this;
+    const { filteredItems, addItem, toggleItem, filterItem, deleteItem } = this;
     const $itemAppender = this.$target.querySelector(
       '[data-component="item-appender"]'
     );
@@ -46,7 +46,7 @@ export default class App extends Component {
     new Items($items, {
       filteredItems,
       toggleItem: toggleItem.bind(this),
-      deleteItem: this.deleteItem.bind(this),
+      deleteItem: deleteItem.bind(this),
     });
     new ItemFilter($itemFilter, {
       filterItem: filterItem.bind(this),
